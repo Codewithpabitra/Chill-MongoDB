@@ -1,0 +1,103 @@
+"mongoDB"
+
+- document oriented Database
+- one of the most popular noSQL database out there .
+- Uses Document storage format called BSON - Bonary style JSON Document 
+- can be used in web and Mobile applications 
+- {fields} -> {document} -> {collection} -> {Database}
+
+
+// important shell commands for MongoDB Shell 
+
+- show all DBs - show dbs 
+
+- use/switch DB - use<dbname>
+
+- show current Db - db 
+
+- get current db name - db.getName()
+
+- Create or switch database - use myDB -> create if does not exists
+
+- create a collection - db.collectionName.insertOne() -> create collection if does not exists
+
+** movies is a collection name 
+
+- db.movies.insertOne({"name" : "Ironman", ratings : 4})
+
+- show all the collection - show collections 
+
+- db.collectionName.insertMany() - insert multiple documents 
+
+- db.movies.insertOne.help() 
+- db.movies.insertMany.help()
+
+** m1 , m2 , m3 are three documents 
+- db.movies.insertMany([m1,m2,m3])
+
+- see all the documents in a collection - db.movies.find()
+
+
+- find a single specific document - db.movies.find({ "name" : "Movies name" })
+
+- find a specific document with a specific field - db.movies.find({"name" : "Movies name"}, {"name" : 1}) --> only give the name 
+
+- find a specific document with a specific field - db.movies.find({"name" : "Movies name"}, {"name" : 0}) --> does not give the name , give the other properties 
+
+- give all the documents with just their name - db.movies.find({},{"name" : 1}) 
+
+- sort alphabetically ascending - db.movies.find({},{"name" : 1}).sort({"name":1})
+
+
+descending - db.movies.find({},{"name" : 1}).sort({"name":-1})
+
+
+- find in certain condition - db.movies.find({ratings: { $gt: 3 }}) --> return all the documents which has rating > 3 
+
+** gt -> greater than 
+
+- update any collection - db.movies.update({"name" : "movies name"}, {$set: {ratings: 5}})
+
+- db.movies.update.help() 
+
+
+- update many -  db.movies.updateMany({ratings: 5}, {$set: {ratings: 2}})
+ 
+
+- delete a document - db.movies.deleteOne({"name" : "Hello Pabitra" })
+
+- delete many documents - db.movies.deleteMany({ ratings : 2})
+
+- const results = db.movies.find().toArray()
+
+
+### Mongoose - a object Data Modeling - ODM library for NodeJS and mongoDB 
+
+- make easier connection with mongoDB 
+
+- Schema definition, Validation, Middleware support and many more features.... 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
