@@ -237,4 +237,4 @@ const deleteMany = async () => {
 }
 
 
-export { deleteOne };
+export { deleteMany };
